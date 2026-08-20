@@ -25,6 +25,7 @@ import Card from './components/Card';
 
 
 
+
 // function App() {
 //   return (
 //     <div>
@@ -38,26 +39,61 @@ import Card from './components/Card';
 //   );
 // }
 
-const students = [
-  { id: 1, name: 'gun',   year: 3 },
-  { id: 2, name: 'tae', year: 2 },
-  { id: 3, name: 'mai', year: 4 },
+// const students = [
+//   { id: 1, name: 'gun',   year: 3 },
+//   { id: 2, name: 'tae', year: 2 },
+//   { id: 3, name: 'mai', year: 4 },
+// ];
+
+// function App() {
+//   return (
+//     <div>
+//       <Card title="ประกาศ">
+//   <p>สัปดาห์หน้าเรียนเรื่อง <b>State & Forms</b></p>
+//   <p>อย่าลืม push การบ้านขึ้น GitHub!</p>
+// </Card>
+//       <h1>รายชื่อนักศึกษา</h1>
+//       {students.map((s) => (
+//         <Greeting key={s.id} name={s.name} year={s.year} />
+//       ))}
+//     </div>
+//   );
+// }
+
+import ProfileCard from './components/ProfileCard';
+import './App.css';
+
+const members = [
+  { id: 1, name: 'จิณห์วรา ด้วงช้าง', nickname: 'ไหม',
+    major: 'เทคโนโลยีสารสนเทศ', favorites: ['โกโก้', 'หมา'] },
+  
+  { id: 2, name: 'ภานุกร กี่อนุกูล', nickname: 'กัน',
+    major: 'เทคโนโลยีสารสนเทศ', favorites: ['ชาเขียว', 'หมา'] },
+  
+  { id: 3, name: 'ภาคิน กี่อนุกูล', nickname: 'กั้ย',
+    major: 'เทคโนโลยีสารสนเทศ', favorites: ['ชาไทย', 'แมว'] },
 ];
 
 function App() {
   return (
-    <div>
-      <Card title="ประกาศ">
-  <p>สัปดาห์หน้าเรียนเรื่อง <b>State & Forms</b></p>
-  <p>อย่าลืม push การบ้านขึ้น GitHub!</p>
-</Card>
-      <h1>รายชื่อนักศึกษา</h1>
-      {students.map((s) => (
-        <Greeting key={s.id} name={s.name} year={s.year} />
-      ))}
+    <div className="container">
+      <h1>สมาชิกกลุ่มของเรา</h1>
+      <div className="card-row">
+        {members.map((m) => (
+          <ProfileCard
+            key={m.id}
+            name={m.name}
+            nickname={m.nickname}
+            major={m.major}
+            favorites={m.favorites}
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
 export default App;
+
+
 
